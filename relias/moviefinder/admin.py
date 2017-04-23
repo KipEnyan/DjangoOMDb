@@ -1,0 +1,10 @@
+from django.contrib import admin
+from .models import Movie
+
+# Register your models here.
+
+class MovieAdmin(admin.ModelAdmin):
+    list_display = ('Title', 'Released')
+    search_fields = ['Title']
+
+admin.site.register(Movie, MovieAdmin)

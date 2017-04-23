@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>MovieFinder</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'moviefinder/style.css' %}" />
+</head>
+
+<body>
+<h1>MovieFinder</h1>
+
+<form action="/" method="post" class="submit">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" class="submitbutton" value="Submit" />
+</form>
+
+{% if error %}<p>{{ error }}</p>{% endif %}
+
+{% if latest_movies %}
+    <table>
+        <tr>
+            <th></th>
+            <th>Poster</th>
+            <th>Title</th>
+            <th>Released</th>
+            <th>Synopsis</th>
+        </tr>
+    {% for movie in latest_movies %}
+        <tr>
+            <td class="deletecell">
+                <form action="/" method="post">
+                    {% csrf_token %}
+                    <button type="submit" value="{{movie.id}}" name="delete" class="delete">X</button>
+                </form>
+            </td>
+            <td class ="postercell">
+                <img class="poster" src="{{movie.Poster}}" alt="Poster not found.">
+            </td>
+            <td class="title">
+                {{ movie.Title }}
+            </td>
+            <td class="released">
+                {{ movie.Released }}
+            </td>
+            <td class="synopsis">
+                {{ movie.Plot }}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No movies submitted yet. Try searching for one!</p>
+{% endif %}
+</body>
+</html>

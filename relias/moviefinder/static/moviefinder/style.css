@@ -1,0 +1,87 @@
+body {
+color:#202121;
+background-color:#f4f7f6;
+font-family:Tahoma, sans-serif;
+}
+
+h1 {
+font-family:Helvetica, Arial, sans-serif;
+font-size:3vmax;
+}
+
+table {
+overflow:auto;
+border-collapse:collapse;
+border-spacing:0;
+}
+
+input {
+font-family:Tahoma, sans-serif;
+font-size:1.5vmax;
+color:#202121;
+height:2.5vmax;
+width:16vmax;
+vertical-align:middle;
+}
+
+.submit {
+font-family:Tahoma, sans-serif;
+font-size:2vmax;
+color:#202121;
+}
+
+.submitbutton {
+height:auto;
+width:auto;
+border:none;
+font-family:Tahoma, sans-serif;
+font-size:2vmax;
+color:#202121;
+}
+
+.deletecell {
+width:1%;
+}
+
+.delete {
+font-size:1.5vmax;
+color:red;
+text-decoration:none;
+border:none;
+background:none;
+}
+
+.delete:hover {
+color:#DC143C;
+text-decoration:underline;
+cursor:pointer;
+}
+
+.poster {
+max-width:100%;
+}
+
+.synopsis {
+width:45%;
+text-align:left;
+}
+
+.released {
+width:14%;
+}
+
+td {
+text-align:center;
+}
+
+tr:nth-child(even) {
+background-color:#fbfbfb;
+}
+
+.postercell,.title {
+width:20%;
+}
+
+p,tr,td {
+font-size:2vmax;
+}
